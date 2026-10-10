@@ -9,7 +9,7 @@ return {
 	Suspension = {
 		MaxLength = 2.5,
 		SpringConstant = 11000,
-		Damping = 1100,
+		Damping = 500,
 		IdleDamping = 1400,
 		MaxForce = 25000,
 	},
@@ -17,7 +17,7 @@ return {
 	WheelRadius = 4.476 / 2,
 
 	LateralFriction = 120,
-	RollingResistance = 20,
+	RollingResistance = 0,
 	CoastBrakeForce = 100,
 	BrakeForce = 2400,
 	ReverseEngageSpeed = 0.5,
@@ -26,7 +26,7 @@ return {
 
 	Visualizer = false,
 
-	Torque = 1500,
+	Torque = 2000,
 	MaxSpeed = 150,
 	SteerAngle = 30,
 }

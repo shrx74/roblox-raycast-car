@@ -76,6 +76,7 @@ function VehicleSimulation.new(model: Model)
 	self.Janitor = Janitor.new()
 	self.Visualizers = {}
 	self.WheelSpin = {}
+	self.Steering = self.Model.Body:FindFirstChild("Steering")
 
 	self.Controls = {
 		Throttle = 0,
@@ -150,6 +151,10 @@ function VehicleSimulation:Step(dt: number)
 
 	self.SmoothSteer = math.abs(self.Controls.Steer - self.SmoothSteer) <= dt * 5 and self.Controls.Steer
 		or self.SmoothSteer + math.sign(self.Controls.Steer - self.SmoothSteer) * dt * 5
+
+	if self.Steering then
+		--	self.Steering:PivotTo(self.Steering:GetPivot() * CFrame.Angles(math.rad(75 * self.Controls.Steer), 0, 0))
+	end
 
 	for wheelName, ogPosition in pairs(self.Config.WheelPositions) do
 		local rayOrigin = self.Chassis.CFrame:ToWorldSpace(CFrame.new(ogPosition))
