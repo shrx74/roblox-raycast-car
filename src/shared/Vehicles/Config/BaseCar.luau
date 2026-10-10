@@ -1,22 +1,32 @@
 return {
 	WheelPositions = {
-		FL = Vector3.new(-5, 0, -4),
-		FR = Vector3.new(5, 0, -4),
-		BL = Vector3.new(-5, 0, 4),
-		BR = Vector3.new(5, 0, 4),
+		FL = Vector3.new(-4.5, -1, -9.5),
+		FR = Vector3.new(4.5, -1, -9.5),
+		BL = Vector3.new(-4.5, -1, 8),
+		BR = Vector3.new(4.5, -1, 8),
 	},
 
 	Suspension = {
 		MaxLength = 2.5,
-		SpringConstant = 10000,
-		Damping = 1500,
+		SpringConstant = 11000,
+		Damping = 1100,
+		IdleDamping = 1400,
+		MaxForce = 25000,
 	},
 
-	WheelRadius = 1.25,
-	WheelFriction = 100,
-	Visualizer = true,
+	WheelRadius = 4.476 / 2,
+
+	LateralFriction = 120,
+	RollingResistance = 20,
+	CoastBrakeForce = 100,
+	BrakeForce = 2400,
+	ReverseEngageSpeed = 0.5,
+	MaxLateralForce = 8000,
+	MaxRollingForce = 600,
+
+	Visualizer = false,
 
 	Torque = 1500,
-	MaxSpeed = 100,
+	MaxSpeed = 150,
 	SteerAngle = 30,
 }
